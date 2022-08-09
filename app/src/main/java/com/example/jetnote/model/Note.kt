@@ -1,7 +1,6 @@
 package com.example.jetnote.model
 
 import androidx.room.*
-import java.sql.Date
 import java.time.Instant
 import java.util.*
 
@@ -16,7 +15,6 @@ data class Note(
     @ColumnInfo(name = "note_description")
     val description: String,
 
-//    @TypeConverters(CategoryConverter::class)
     @ColumnInfo(name = "note_entry_date")
-    val entryDate: String = Date.from(Instant.now()).toString()
+    val entryDate: Date = Date.from(Instant.now())
 )
